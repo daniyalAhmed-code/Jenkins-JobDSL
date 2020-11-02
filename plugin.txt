@@ -3,7 +3,13 @@ credentials-binding:latest
 global-slack-notifier:latest
 ldap:latest
 git:latest
+git-client
 github-branch-source:latest
+git
+github
+github-api
+github-branch-source
+git-parameter
 script-security:latest
 startup-trigger-plugin:2.9.3
 job-dsl:1.74

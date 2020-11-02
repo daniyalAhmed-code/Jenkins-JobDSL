@@ -9,11 +9,13 @@ jobs:
             nodeParameterName("")
           }
         }
-        scm {
+          scm {
             git {
               remote {
                 url('https://github.com/daniyalAhmed-code/Jenkins-JobDSL.git')
+                credentials('githiub-token')
               }
+              branches('main')
             }
           }
         

@@ -1,4 +1,4 @@
-pipelineJob('example2') {
+pipelineJob('example3') {
   definition {
     cpsScm {
       scm {
@@ -8,7 +8,7 @@ pipelineJob('example2') {
             }
         }
       }
-         scriptPath("pipeline/PrintText2.groovy")
+         scriptPath("pipeline/PrintText.groovy")
       }
      
     }
