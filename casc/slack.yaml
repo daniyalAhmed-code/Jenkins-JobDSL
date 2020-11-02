@@ -1,0 +1,16 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - string:
+          id: "jenking-test"
+          scope: GLOBAL
+          secret: ""
+
+unclassified:
+   slackNotifier:
+    botUser: false
+    room: "slack-jenkins-testing"
+    sendAsText: false
+    teamDomain: "eurustechnologies"
+    tokenCredentialId: "jenking-test"
