@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Slack it'){
             steps {
-                slackSend channel: '#slack-test-channel', 
+                slackSend channel: '#slack-jenkins-testing', 
                           message: 'Hello, world'
             }
             post {
@@ -14,7 +14,7 @@ pipeline {
             echo 'I will always say hello in the console.'
            
              }
-            slackSend channel: '#slack-test-channel',
+            slackSend channel: '#slack-jenkins-testing',
                  message: 'Hello, world'
         }
     }
