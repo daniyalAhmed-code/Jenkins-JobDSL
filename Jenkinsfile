@@ -1,12 +1,15 @@
 @Library('test-shared-lib')_
-def consul = new Utils()
+import classes.Tester 
 
-def getVar() {
-  echo "HEllo world from jenkinsfile"
-}
-stage('Print Build Info') {
-    utils(this.&getVar)
-} 
-stage("Static method test"){
-     consul.test(this.&getVar)
-}
+stages{
+    stage('Demo') {  
+      steps{
+        echo 'Hello world'
+        sayHello 'test'
+       script{
+        def t = new Tester('Alice')
+        t.sayHi()
+       }
+      }
+   }
+ }  

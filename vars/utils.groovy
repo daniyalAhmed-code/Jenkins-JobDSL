@@ -13,18 +13,3 @@ def call(Closure getVar) {
     }
   }
 }
-def test(Closure getVar) {
-  pipeline {
-    agent any
-    stages {
-      stage('one') {
-        steps {
-          echo "This is Pipeline one from test "
-          script {
-            getVar()
-          }
-        }
-      }
-    }
-  }
-}
