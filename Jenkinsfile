@@ -1,5 +1,5 @@
 @Library('test-shared-lib')_
-ppipeline {
+pipeline {
     agent any
 
     stages {
