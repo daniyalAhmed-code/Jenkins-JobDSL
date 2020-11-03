@@ -9,8 +9,7 @@ pipeline {
             }
             post {
         always {
-            slackSend channel: '#slack-jenkins-testing',
-                 message: sayHello.postBuild()
+            utils.notifyBuild(currentBuild.result)
         }
     }
         }
