@@ -15,7 +15,8 @@ import classes.Tester
 
 pipeline {
     agent any
-    stages('Demo') {  
+    stages{  
+      stage('Demo') {
       steps{
         echo 'Hello world'
         sayHello 'test'
@@ -23,6 +24,7 @@ pipeline {
         def t = new Tester('Alice')
         t.sayHi()
        }
+      }
       }
    }
   }
