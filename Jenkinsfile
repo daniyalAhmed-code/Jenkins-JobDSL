@@ -12,8 +12,10 @@
 @Library('test-shared-lib')_
 import classes.Tester 
 
-stages{
-    stage('Demo') {  
+
+pipeline {
+    agent any
+    sstage('Demo') {  
       steps{
         echo 'Hello world'
         sayHello 'test'
@@ -23,4 +25,5 @@ stages{
        }
       }
    }
- }  
+  }
+
