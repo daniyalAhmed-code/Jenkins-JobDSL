@@ -19,8 +19,10 @@ pipeline {
       steps{
         echo 'Hello world'
         sayHello 'test'
-        sayHello.test 'Daniyal'
-      
+        script{
+       sayHello.test 'Daniyal'
+       
+       }
       }
       }
    }
