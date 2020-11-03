@@ -4,12 +4,16 @@ pipeline {
 
     stages {
         stage('Slack it'){
-            post {
-            always {
-            script {
-                BUILD_USER = getBuildUser()
+            steps {
+                slackSend channel: '#slack-test-channel', 
+                          message: 'Hello, world'
             }
+            post {
+        always {
+            script {
             echo 'I will always say hello in the console.'
+           
+             }
             slackSend channel: '#slack-test-channel',
                  message: 'Hello, world'
         }
