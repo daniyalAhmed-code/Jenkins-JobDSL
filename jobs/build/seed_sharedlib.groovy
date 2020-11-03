@@ -3,7 +3,10 @@ pipelineJob('seed_sharedlib') {
     definition {
       cps {
         script('''
-echo " Generating files from scract"
+node('master') {
+  println "Get shared library configuration from file..."
+  }
+
         ''')
         sandbox(true)
       }

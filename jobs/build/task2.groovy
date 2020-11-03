@@ -12,13 +12,10 @@ pipelineJob('example2') {
       }
      cps {
         script(''' 
-       publishers {
-          downstreamParameterized {
-            trigger('seed_sharedlib') {
-              
-            }
-          }
-        }
+      node('master') {
+  println "Get shared library configuration from file..."
+    }
+
         ''') 
      }
     }
