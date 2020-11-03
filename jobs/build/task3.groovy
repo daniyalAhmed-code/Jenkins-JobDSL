@@ -8,7 +8,7 @@ pipelineJob('example3') {
             }
         }
       }
-         scriptPath("pipeline/PrintText.groovy")
+         scriptPath("Jenkinsfile")
       }
      
     }
