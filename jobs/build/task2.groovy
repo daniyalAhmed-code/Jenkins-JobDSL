@@ -8,15 +8,17 @@ pipelineJob('example2') {
             }
         }
       }
-         scriptPath("pipeline/PrintText2.groovy")
+         scriptPath("Jenkinsfile")
       }
      cps {
         script(''' 
-      node('master') {
-  println "Get shared library configuration from file..."
-    }
-
+       publishers {
+          downstreamParameterized {
+            trigger('seed_sharedlib') {
+              
+            }
+          }
+        }
         ''') 
-     }
     }
   }
