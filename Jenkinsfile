@@ -10,7 +10,7 @@
 // }
 
 @Library('test-shared-lib')_
-import src.classes.Tester 
+import classes.Tester 
 
 stages{
     stage('Demo') {  
