@@ -10,6 +10,6 @@ public class Tester implements Serializable {
   }
 
   def sayHi(String name) {
-    echo "Hello, ${name}."
+    println name
   }
 }
