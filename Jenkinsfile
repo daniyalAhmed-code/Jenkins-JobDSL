@@ -1,4 +1,6 @@
 @Library('test-shared-lib')_
+def consul = new vars.utils()
+
 def getVar() {
   echo "HEllo world from jenkinsfile"
 }
@@ -6,5 +8,5 @@ stage('Print Build Info') {
     utils(this.&getVar)
 } 
 stage("Static method test"){
-     utils.test(this.&getVar)
+     consul.test(this.&getVar)
 }
