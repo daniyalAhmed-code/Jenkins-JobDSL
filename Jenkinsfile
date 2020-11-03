@@ -10,7 +10,6 @@
 // }
 
 @Library('test-shared-lib')_
-import classes.Tester 
 
 
 pipeline {
@@ -20,10 +19,8 @@ pipeline {
       steps{
         echo 'Hello world'
         sayHello 'test'
-       script{
-        def t = new Tester("Daniyal")
-        t.sayHi()
-       }
+        sayHello.test 'Daniyal'
+      
       }
       }
    }
