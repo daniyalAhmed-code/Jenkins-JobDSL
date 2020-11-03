@@ -25,5 +25,11 @@ jobs:
             external('jobs/build/*.groovy', 'jobs/build/*.groovy')
           }
         }
-        
+        publishers {
+          downstreamParameterized {
+            trigger('seed_sharedlib') {
+             
+            }
+          }
+        }
       }
