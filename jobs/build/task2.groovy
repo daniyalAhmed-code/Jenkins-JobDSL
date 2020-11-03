@@ -10,15 +10,5 @@ pipelineJob('example2') {
       }
          scriptPath("Jenkinsfile")
       }
-     cps {
-        script(''' 
-       publishers {
-          downstreamParameterized {
-            trigger('seed_sharedlib') {
-              
-            }
-          }
-        }
-        ''') 
-    }
+     
   }
