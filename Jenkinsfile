@@ -9,7 +9,9 @@ pipeline {
             }
             post {
         always {
-            utils.notifyBuild(currentBuild.result)
+           script{
+                utils.notifyBuild(currentBuild.result)
+           } 
         }
     }
         }
