@@ -2,10 +2,7 @@
 def getVar() {
   echo "HEllo world from jenkinsfile"
 }
-
-
-
 stage('Print Build Info') {
     utils(this.&getVar)
-
+    utils("this is a heloo world")
 } 
