@@ -5,17 +5,12 @@ pipeline {
     stages {
         stage('Slack it'){
             steps {
-                slackSend channel: '#slack-jenkins-testing', 
-                          message: 'Hello, world'
+               echo "Working in the Console"
             }
             post {
         always {
-            script {
-            echo 'I will always say hello in the console.'
-           
-             }
             slackSend channel: '#slack-jenkins-testing',
-                 message: 'Hello, world'
+                 message: sayHello.postBuild()
         }
     }
         }

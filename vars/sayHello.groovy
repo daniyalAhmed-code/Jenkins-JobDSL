@@ -2,6 +2,6 @@
 def call(String name = 'human') {
   echo "Hello, ${name}."
 }
-def test(String name = 'human') {
-  echo "Hello, ${name}."
+def postBuild(String name = 'human') {
+  echo "Post Build Successfully"
 }
