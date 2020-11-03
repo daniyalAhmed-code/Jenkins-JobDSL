@@ -10,6 +10,7 @@ pipelineJob('example2') {
       }
          scriptPath("pipeline/PrintText2.groovy")
       }
+      seed_sharedlib deploy: true
      
     }
   }

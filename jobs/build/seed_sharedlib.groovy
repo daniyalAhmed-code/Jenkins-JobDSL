@@ -1,18 +1,16 @@
-pipelineJob('seed_sharedlib') {
-
-    logRotator {
-      numToKeep(10)
-    }
-
-    definition {
-      cps {
-        script('''
-
-node('master') {
-  println "Get shared library configuration from file..."
-  }
-        ''')
-        sandbox(true)
-      }
+def call(Map config=[:], Closure body) {
+    node {
+        stage("Install") {
+            echo "installing nodejs"
+        }
+        stage("Test") {
+            echo "testing nodejs"
+        }
+        stage("Deploy") {
+            if (config.deploy) {
+                echo "deploying nodejs"
+            }
+        }
+        body()
     }
 }
