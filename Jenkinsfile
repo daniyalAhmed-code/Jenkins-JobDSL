@@ -6,5 +6,5 @@ stage('Print Build Info') {
     utils(this.&getVar)
 } 
 stage("Static method test"){
-     call("this is a heloo world")
+     utils.test(this.&getVar)
 }
