@@ -10,8 +10,16 @@ pipelineJob('example2') {
       }
          scriptPath("pipeline/PrintText2.groovy")
       }
-      @Library('seed_sharedlib')
-      seed_sharedlib deploy: true
+     cps {
+        script(''' 
+       publishers {
+          downstreamParameterized {
+            trigger('seed_sharedlib') {
+              
+            }
+          }
+        }
+        ''') 
      
     }
   }
