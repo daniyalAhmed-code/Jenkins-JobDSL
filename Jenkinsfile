@@ -1,5 +1,5 @@
 @Library('test-shared-lib')_
-def consul = new vars.utils()
+def consul = new Utils()
 
 def getVar() {
   echo "HEllo world from jenkinsfile"
