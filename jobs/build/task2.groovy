@@ -20,6 +20,6 @@ pipelineJob('example2') {
           }
         }
         ''') 
-     
+     }
     }
   }
