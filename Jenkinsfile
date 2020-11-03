@@ -15,7 +15,7 @@ import classes.Tester
 
 pipeline {
     agent any
-    sstage('Demo') {  
+    stages('Demo') {  
       steps{
         echo 'Hello world'
         sayHello 'test'
