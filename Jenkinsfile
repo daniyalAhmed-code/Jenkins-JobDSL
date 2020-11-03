@@ -1,7 +1,8 @@
 @Library('test-shared-lib')_
-pipeline {
+ppipeline {
     agent any
-   stages {
+
+    stages {
         stage('Slack it'){
             steps {
                 slackSend channel: '#slack-test-channel', 
@@ -10,5 +11,4 @@ pipeline {
         }
     }
 }
-
 
