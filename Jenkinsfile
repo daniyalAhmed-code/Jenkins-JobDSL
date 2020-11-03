@@ -21,8 +21,8 @@ pipeline {
         echo 'Hello world'
         sayHello 'test'
        script{
-        def t = new Tester('Alice')
-        t.sayHi()
+        def t = new Tester()
+        t.sayHi("Daniyal")
        }
       }
       }
