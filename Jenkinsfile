@@ -4,5 +4,7 @@ def getVar() {
 }
 stage('Print Build Info') {
     utils(this.&getVar)
-    utils("this is a heloo world")
 } 
+stage("Static method test"){
+     utils("this is a heloo world")
+}
