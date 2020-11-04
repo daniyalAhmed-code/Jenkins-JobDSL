@@ -9,7 +9,7 @@ multibranchPipelineJob('multi-test') {
     }
     factory {
         workflowBranchProjectFactory {
-               scriptPath("pipelines/PrintText.groovy")
+               scriptPath("pipeline/PrintText.groovy")
     }
     }
     
