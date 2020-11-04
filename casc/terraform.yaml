@@ -1,0 +1,9 @@
+tool:
+  terraform:
+    installations:
+    - name: "Terraform"
+      properties:
+      - installSource:
+          installers:
+          - terraformInstaller:
+              id: "0.12.28-linux-386"

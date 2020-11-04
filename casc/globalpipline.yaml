@@ -1,0 +1,13 @@
+unclassified:
+ globalLibraries:
+    libraries:
+    - defaultVersion: "main"
+      name: "test-shared-lib"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              id: "f122fb94-d1b7-4b27-9392-3d9941d72b73"
+              remote: "https://github.com/daniyalAhmed-code/jenkins-Jcasc.git"
+              traits:
+              - "gitBranchDiscovery"
