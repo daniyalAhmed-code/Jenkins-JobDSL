@@ -3,12 +3,12 @@ multibranchPipelineJob('multi-test') {
         git {
             id('123456789') // IMPORTANT: use a constant and unique identifier
             remote('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
-            includes('develop')
+            includes('devTest')
         }
     }
     factory {
         workflowBranchProjectFactory {
-               scriptPath("pipeline/PrintText.groovy")
+               scriptPath("pipeline/PrintText2.groovy")
     }
     }
     
@@ -18,4 +18,3 @@ multibranchPipelineJob('multi-test') {
         }
     }
 }
-
