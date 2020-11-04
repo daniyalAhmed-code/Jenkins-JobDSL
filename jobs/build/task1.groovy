@@ -7,6 +7,9 @@ multibranchPipelineJob('multi-test') {
             excludes('main')
         }
     }
+    configure {
+            scriptPath("pipelines/PrintText.groovy")
+    }
     orphanedItemStrategy {
         discardOldItems {
             numToKeep(2)
