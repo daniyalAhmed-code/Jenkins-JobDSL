@@ -1,0 +1,7 @@
+{
+    "libs": [{
+        "name": "shared-library",
+        "remote": "https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git",
+         "version": "main"
+    }]
+}
