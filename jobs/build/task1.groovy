@@ -4,6 +4,8 @@ multibranchPipelineJob('multi-test') {
             id('123456789') // IMPORTANT: use a constant and unique identifier
             remote('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
             includes('develop')
+            excludes('main')
+
         }
     }
     factory {
