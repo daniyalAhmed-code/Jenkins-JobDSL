@@ -1,4 +1,3 @@
-@Library('test-shared-lib')_
 pipeline {
     agent any
 
@@ -7,13 +6,7 @@ pipeline {
             steps {
                echo "Working in the Console"
             }
-            post {
-        always {
-           script{
-                utils.notifyBuild(currentBuild.result)
-           } 
-        }
-    }
+     
         }
     }
 }
