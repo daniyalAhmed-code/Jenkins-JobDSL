@@ -1,0 +1,9 @@
+tool:
+  nodejs:
+    installations:
+    - properties:
+      - installSource:
+          installers:
+          - nodeJSInstaller:
+              id: "10.8.0"
+              npmPackagesRefreshHours: 72
