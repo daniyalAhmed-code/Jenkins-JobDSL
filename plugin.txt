@@ -1,15 +1,9 @@
 configuration-as-code:latest
 credentials-binding:latest
 global-slack-notifier:latest
-ldap:latest
-git:latest
-git-client
-github-branch-source:latest
-git
 github
 github-api
 github-branch-source
-git-parameter
 terraform
 nodejs
 script-security:latest
