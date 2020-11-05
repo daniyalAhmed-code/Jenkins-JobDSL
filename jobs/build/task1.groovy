@@ -1,20 +1,14 @@
-job('example') {
-    scm {
-        git {
-            remote {
-                github('daniyalAhmed-code/Jenkins-JobDsl')
-                refspec('+refs/pull/*:refs/remotes/origin/pr/*')
-            } 
-            branch('${sha1}')
+pipelineJob('example2') {
+  definition {
+    cpsScm {
+      scm {
+           git {
+          remote {
+                url('https://github.com/daniyalAhmed-code/Jenkins-JobDSL.git')
+            }
         }
-    }
-
-    configure {
-            scriptPath("pipelines/PrintText.groovy")
-    }
-    orphanedItemStrategy {
-        discardOldItems {
-            numToKeep(2)
-        }
-    }
-}
+      }
+         scriptPath("Jenkinsfile")
+      }
+  }
+  }
