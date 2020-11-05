@@ -19,9 +19,7 @@
     }
         }
     }
-}
-
-             steps {
+}         steps {
                 echo "Working in the Console"
              }
              post {
