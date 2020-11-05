@@ -1,19 +1,12 @@
 multibranchPipelineJob('multi_test1') {
-    // branchSources {
-    //     git {
-    //         id('123456789') // IMPORTANT: use a constant and unique identifier
-    //         remote('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
-    //         includes('devTest')
-    //         excludes('main')
-    //     }
-    // }
-     scm {
+    branchSources {
         git {
+            id('123456789') // IMPORTANT: use a constant and unique identifier
             remote {
                 github('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
                 refspec('+refs/pull/*:refs/remotes/origin/pr/*')
             }
-            branch('${sha1}')
+          branch('${sha1}')
         }
     }
      triggers {
