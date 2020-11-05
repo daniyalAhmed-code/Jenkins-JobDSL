@@ -44,7 +44,7 @@ multibranchPipelineJob('multi_test1') {
             onlyAdminsMerge()
         }
     }
-}
+
     factory {
         workflowBranchProjectFactory {
                scriptPath("pipeline/PrintText2.groovy")
