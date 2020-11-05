@@ -11,7 +11,7 @@ job('example') {
     triggers {
         githubPullRequest {
             admin('daniyalAhmed-code')
-            orgWhitelist('my_github_org')
+            orgWhitelist('DaniyalsOrg')
             cron('H/5 * * * *')
             triggerPhrase('OK to test')
             onlyTriggerPhrase()
