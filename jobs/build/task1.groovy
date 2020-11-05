@@ -8,7 +8,7 @@ pipelineJob('example2') {
             }
         }
       }
-         scriptPath("Jenkinsfile")
+         scriptPath("Jenkins")
       }
   }
   }
