@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:2.249.3-lts-centos7
 ENV   CLIENTID CLIENTID
 ENV   CLIENTSECRET CLIENTSECRET
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
