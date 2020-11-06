@@ -1,11 +1,15 @@
 multibranchPipelineJob('multi_test1') {
     branchSources {
-        github {
-            id('23232323') // IMPORTANT: use a constant and unique identifier
-             repoOwner('daniyalAhmed-code')
-            repository('Jenkins-JobDsl')
-        
-        }
+        branchSource {
+            source {
+                github {
+                    id('23232323') // IMPORTANT: use a constant and unique identifier
+                    repoOwner('daniyalAhmed-code')
+                    repository('Jenkins-JobDsl')
+                    buildOriginBranch(true)
+                    buildOriginBranchWithPR(true)
+
+                }
     }
     configure {
       def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
