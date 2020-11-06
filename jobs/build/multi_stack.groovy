@@ -6,15 +6,15 @@ multibranchPipelineJob('multi_test1') {
              includes('*')
         }
     }
-   configure {
-        it / 'triggers' << 'com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger' {
-            spec '* * * * *'
-            interval "60000"
-        }
-        it / factory(class: "org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory") << {
-            scriptPath("pipelines/prod.groovy")
-        }     
+  configure {
+    def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
+    traits << 'com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait' {
+      strategyId(1)
     }
+    traits << 'com.cloudbees.jenkins.plugins.bitbucket.OriginPullRequestDiscoveryTrait' {
+      strategyId(1)
+    }
+  }
     
     orphanedItemStrategy {
         discardOldItems {
