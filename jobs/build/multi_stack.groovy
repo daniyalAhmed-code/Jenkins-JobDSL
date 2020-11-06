@@ -2,11 +2,7 @@ multibranchPipelineJob('multi_test1') {
     branchSources {
         git {
             id('123456789') // IMPORTANT: use a constant and unique identifier
-            remote {
-                github('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
-           
-            }
-          
+            remote ('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
         }
     }
     
