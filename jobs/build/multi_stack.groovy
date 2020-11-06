@@ -1,27 +1,24 @@
-multibranchPipelineJob('job name') {
+multibranchPipelineJob('multi_test1') {
     branchSources {
-        branchSource {
-            source {
-                git {
-                    remote('https://github.com/daniyalAhmed-code/Jenkins-JobDSL.git')
-                }
-            }
-            strategy {
-                defaultBranchPropertyStrategy {
-                    props {
-                        noTriggerBranchProperty()
-                    }
-                }
-            }
+        git {
+            id('123456789') // IMPORTANT: use a constant and unique identifier
+            remote ('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
+             includes('*')
         }
     }
-    configure {
-        def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
-        traits << 'jenkins.plugins.git.traits.BranchDiscoveryTrait' {}
+   configure {
+        it / 'triggers' << 'com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger' {
+            spec '* * * * *'
+            interval "60000"
+        }
+        it / factory(class: "org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory") << {
+            scriptPath("pipelines/prod.groovy")
+        }     
     }
-    triggers {
-        periodic(2) // Trigger every 2 min.
-    }
-    orphanedItemStrategy { discardOldItems { numToKeep(-1) } }
-}
     
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(2)
+        }
+    }
+}
