@@ -6,7 +6,11 @@ multibranchPipelineJob('multi_test1') {
             repository('Jenkins-JobDsl')
         }
     }
- 
+    configure{
+         it / 'triggers' << 'org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait' {
+           strategyId(1)
+        }
+    }
     orphanedItemStrategy {
         discardOldItems {
             numToKeep(2)
