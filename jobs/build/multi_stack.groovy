@@ -1,3 +1,4 @@
+//To connect with github and use pr 
 multibranchPipelineJob('multi_test1') {
     branchSources {
         branchSource {
