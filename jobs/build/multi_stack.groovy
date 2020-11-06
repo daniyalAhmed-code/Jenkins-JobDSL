@@ -26,4 +26,6 @@ multibranchPipelineJob('multi_test1') {
         }
     }
 }
+    }
+}
 
