@@ -14,20 +14,38 @@ multibranchPipelineJob('multi_test1') {
     }
     }
      configure {
-    def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
-    traits << 'com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait' {
-     strategyId(1) // detect all branches -refer the plugin source code for various options
-    }
-    traits << 'com.cloudbees.jenkins.plugins.bitbucket.ForkPullRequestDiscoveryTrait' {
-     strategyId(1)
-    }
-    traits << 'com.cloudbees.jenkins.plugins.bitbucket.OriginPullRequestDiscoveryTrait' {
-     strategyId(1)
-    }
-    traits << 'com.cloudbees.jenkins.plugins.bitbucket.WebhookRegistrationTrait' {
-      mode(ITEM)
-    }
-  }
+        it / sources / 'data' / 'jenkins.branch.BranchSource' << {
+            source(class: 'jenkins.plugins.git.GitSCMSource') {
+                id(uuid)
+                remote("https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git")
+                includes('*')
+                excludes('')
+                ignoreOnPushNotifications('false')
+                traits {
+                    'jenkins.plugins.git.traits.BranchDiscoveryTrait'()
+                }
+            }
+            // default strategy when sourcing from a branch
+            strategy(class: "jenkins.branch.NamedExceptionsBranchPropertyStrategy") {
+                defaultProperties(class: "java.util.Arrays\$ArrayList") {
+                    a(class: "jenkins.branch.BranchProperty-array") {
+                        // don't trigger builds
+                        "jenkins.branch.NoTriggerBranchProperty"()
+                    }
+                }
+                // exceptions to the default strategy
+                namedExceptions(class: "java.util.Arrays\$ArrayList") {
+                    a(class: "jenkins.branch.NamedExceptionsBranchPropertyStrategy\$Named-array") {
+                        "jenkins.branch.NamedExceptionsBranchPropertyStrategy_-Named"() {
+                            // for the brach named `master` trigger builds 
+                            //   (this is default behaviour if no branch properties are specified)
+                            props(class: "empty-list")
+                            name("master")
+                        }
+                    }
+                }
+            }
+        }
     
     orphanedItemStrategy {
         discardOldItems {
