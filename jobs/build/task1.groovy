@@ -10,6 +10,5 @@ pipelineJob('example2') {
       }
          scriptPath("Jenkinsfile")
       }
-      exit
   }
   }
