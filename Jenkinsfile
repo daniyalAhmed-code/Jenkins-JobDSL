@@ -1,21 +1,21 @@
 
-//  pipeline {
+ pipeline {
 
-//     agent any
-//     stages {
-//         stage('Slack it'){
+    agent any
+    stages {
+        stage('Slack it'){
 
-//             steps {
-//                echo "Working in the Console"
-//             }
-//             post {
-//         always {
-//            script{
-//                 utils.notifyBuild(currentBuild.result)
-//            } 
-//         }
-//     }
-//         }
-//     }
-// }         
+            steps {
+               echo "Working in the Console"
+            }
+            post {
+        always {
+           script{
+                utils.notifyBuild(currentBuild.result)
+           } 
+        }
+    }
+        }
+    }
+}         
            
