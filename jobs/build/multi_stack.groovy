@@ -46,7 +46,7 @@ multibranchPipelineJob('multi_test1') {
                 }
             }
         }
-    
+     }
     orphanedItemStrategy {
         discardOldItems {
             numToKeep(2)
