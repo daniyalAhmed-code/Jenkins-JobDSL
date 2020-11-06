@@ -17,5 +17,5 @@ multibranchPipelineJob('multi_test1') {
             numToKeep(2)
         }
     }
-}
+}}
 
