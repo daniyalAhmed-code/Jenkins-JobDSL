@@ -17,19 +17,5 @@
     }
         }
     }
-}         steps {
-                echo "Working in the Console"
-             }
-             post {
-         always {
-            script{
-                 utils.notifyBuild(currentBuild.result)
-            } 
-         }
-     }
-         }
-     }
- }
-
-
-
+}         
+           
