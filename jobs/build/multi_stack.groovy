@@ -1,9 +1,9 @@
-multibranchPipelineJob('multi_test1') {
-   branchSources {
+multibranchPipelineJob('job name') {
+    branchSources {
         branchSource {
             source {
                 git {
-                    remote ('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
+                    remote('https://github.com/daniyalAhmed-code/Jenkins-JobDSL.git')
                 }
             }
             strategy {
@@ -19,9 +19,9 @@ multibranchPipelineJob('multi_test1') {
         def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
         traits << 'jenkins.plugins.git.traits.BranchDiscoveryTrait' {}
     }
-    
+    triggers {
+        periodic(2) // Trigger every 2 min.
+    }
     orphanedItemStrategy { discardOldItems { numToKeep(-1) } }
 }
-   
-   
     
