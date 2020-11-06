@@ -4,7 +4,7 @@ multibranchPipelineJob('multi_test1') {
             id('23232323') // IMPORTANT: use a constant and unique identifier
              repoOwner('daniyalAhmed-code')
             repository('Jenkins-JobDsl')
-        traits {
+        withTraits {
               // discover PRs
               originPullRequestDiscoveryTrait {
                 strategyId(1) //build both the head and merge refs
