@@ -6,8 +6,9 @@ multibranchPipelineJob('multi_test1') {
                     id('23232323') // IMPORTANT: use a constant and unique identifier
                     repoOwner('daniyalAhmed-code')
                     repository('Jenkins-JobDsl')
-
-                traits {
+                    repositoryUrl('https://github.com/daniyalAhmed-code/Jenkins-JobDsl.git')
+                    configuredByUrl(false)
+                    traits {
                     gitHubBranchDiscovery {
                     // Determines which branches are discovered.
                     strategyId(1)
@@ -18,6 +19,7 @@ multibranchPipelineJob('multi_test1') {
                     strategyId(1)
                     }
                 }
+
                 }
     }
     configure {
